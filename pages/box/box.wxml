@@ -1,0 +1,12 @@
+<!--pages/box/box.wxml-->
+<swiper autoplay='true' class='swiper' current="{{currentTab}}" indicator-dots='true' interval='1000' bindchange='bindChange' indicator-active-color='#fff' indicator-color='#125df1'>
+  <swiper-item>
+    <image class='image' mode='widthFix' src='../../images/1.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='image' mode='widthFix' src='../../images/3.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+    <image class='image' mode='widthFix' src='../../images/4.jpg'></image>
+  </swiper-item>
+</swiper>

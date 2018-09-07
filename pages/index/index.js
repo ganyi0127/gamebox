@@ -4,19 +4,28 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    motto: '进入游戏主页',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    clicked: false
   },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+
+  /**
+   * 页面初始化
+   */
   onLoad: function () {
     if (app.globalData.userInfo) {
+      /**
+       * 使立即生效
+       */
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -49,6 +58,24 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+
+  /**
+   * 页面渲染完成
+   */
+  onReady: function(){
+
+  },
+
+  /**
+   * 进入游戏主页
+   */
+  click: function(){
+    console.log('点击进入游戏盒子')
+
+    wx.navigateTo({
+      url: '../box/box'
     })
   }
 })
