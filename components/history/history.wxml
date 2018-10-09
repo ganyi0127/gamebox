@@ -1,0 +1,15 @@
+<!--components/history/history.wxml-->
+<view class='container' hidden="{{!historys.length>0}}">
+<text>最近玩过</text>
+<scroll-view class='root'>
+
+  <view class="items">
+    <view class="item" wx:for="{{historys}}" wx:for-index="index" wx:for-item="game">
+      <image class="item-cover" src="{{game.icon}}"  bindtap="bindGameTap" data-game='{{game}}'></image>
+      <view class='subTitle'>{{game.name}}</view>
+      <!-- <view class='subTitle2'>{{game.detail}}</view> -->
+    </view>
+  </view>
+
+</scroll-view>
+</view>

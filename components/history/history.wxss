@@ -1,0 +1,62 @@
+/* components/history/history.wxss */
+.root{
+  height: 6rem;
+  border-radius: 1rem;
+}
+
+text{
+  text-align: center;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #eee;
+}
+
+.items {
+  width: 100%;
+  /* height: 6rem; */
+  background-color: #f00;
+  padding: 0;
+}
+
+.item {
+  width: 25%;
+  height: 6rem;
+  float: left;
+  margin: 20rpx 0 10rpx 0;
+  padding: 0rem;
+}
+
+.item text {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.item .item-cover {
+  width: 4rem;
+  height: 4rem;
+  color: #bbb;
+  border-radius: 1rem;
+  display: block;
+  /* padding: 0.5rem; */
+  /* padding: 10%; */
+  margin: 0 auto;
+}
+
+.item .subTitle {
+  text-align: center;
+  /* margin-left: 20rpx; */
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+
+.item .subTitle2 {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+}

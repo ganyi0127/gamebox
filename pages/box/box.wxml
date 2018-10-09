@@ -1,12 +1,62 @@
 <!--pages/box/box.wxml-->
-<swiper autoplay='true' class='swiper' current="{{currentTab}}" indicator-dots='true' interval='1000' bindchange='bindChange' indicator-active-color='#fff' indicator-color='#125df1'>
-  <swiper-item>
-    <image class='image' mode='widthFix' src='../../images/1.jpg'></image>
-  </swiper-item>
-  <swiper-item>
-    <image class='image' mode='widthFix' src='../../images/3.jpg'></image>
-  </swiper-item>
-  <swiper-item>
-    <image class='image' mode='widthFix' src='../../images/4.jpg'></image>
+
+<!-- 广告图 -->
+<view class='swiper-view' id='swiperView' style='height:{{1}}'>
+  <!-- <view class='title'>今日</view> -->
+  <swiper autoplay='{{autoPlay}}' class='swiper-game' id='swiper' style='height:{{swiperImageHeight}}' current='{{currentTab}}' indicator-dots='{{indicatorDots}}' interval='2000' bindchange='bindChange' indicator-active-color='#fff' indicator-color='#6fa6de'>
+
+    <swiper-item wx:for='{{bannerList}}'>
+      <image class='image' src='{{item.img}}' data-gameId='{{item}}' bindtap='bindBannerTap' data-banner='{{item}}'></image>
+    </swiper-item>
+
+  </swiper>
+</view>
+
+
+<!-- 历史纪录 -->
+<!-- <view class='container'> -->
+<history id='history' historys='{{historys}}' bind:bindGameTap="bindGameTap" data-game='{{game}}'></history>
+<!-- </view> -->
+
+<!-- <view class="container">
+  <alert id='alert' title='我是标题' content='恭喜你，学会了小程序组件' cancelText='知道了' confirm='谢谢你' bind:cancelEvent="_cancelEvent" bind:confirmEvent="_confirmEvent">
+  </alert>
+
+  <button type="primary" bindtap="showAlert"> ClickMe! </button>
+</view> -->
+
+
+<!-- 切换栏 -->
+<view class="swiper-tab">
+  <view style="padding-left:5px;" class="tab-list-left {{currentNavTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">推荐游戏</view>
+  <view class="tab-list-right {{currentNavTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">所有游戏</view>
+</view>
+
+
+
+<!-- 游戏页面 -->
+<swiper current="{{currentNavTab}}" class='swiper' style="height:{{itemsHeight}}rpx;" duration="300" bindchange="bindChangeNav">
+  <swiper-item wx:for="{{gamesData}}" wx:for-index="key" wx:for-item="value">
+
+    <scroll-view class='' scroll-x="false" scroll-y="true">
+      <!-- 游戏布局 -->
+      <view>
+        <view class="title">
+          <!-- <image class="huace" src="../../src/huace.png" background-size="contain"></image> -->
+        </view>
+        <view class="items">
+          <view class="item" wx:for="{{value.values}}" wx:for-index="index" wx:for-item="game">
+            <image class="item-cover" src="{{game.icon}}" background-size="contain" bindtap="bindGameTap" data-game='{{game}}'></image>
+            <view class='subTitle'>{{game.name}}</view>
+            <view class='subTitle2'>{{game.detail}}</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 加载更多按钮 -->
+    <button wx:if='{{currentNavTab===1}}' class="button" bindtap='getMoreGames' style='marigin-top:{{itemsHeight}}'>
+      加载更多游戏
+    </button>
   </swiper-item>
 </swiper>

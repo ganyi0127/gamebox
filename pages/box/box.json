@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "游戏盒子"
+  "navigationBarTitleText": "游戏盒子",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "history": "/components/history/history",
+    "alert": "/components/alert/alert"
+  }
 }

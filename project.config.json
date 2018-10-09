@@ -11,9 +11,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.5",
-	"appid": "wx2648aa5577107c61",
-	"projectname": "WeChatProjects",
+	"libVersion": "2.3.0",
+	"appid": "wxf9e888590146d289",
+	"projectname": "%E8%BF%9E%E8%BF%9E%E5%96%9C%E5%B0%8F%E7%9B%92%E5%AD%90",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

@@ -1,19 +1,206 @@
 /* pages/box/box.wxss */
 
-.swiper{
-  margin-top: 20px;
-  margin-left: 10%;
-  width: 80%;
-  height: 380rpx;
-  background-color: #aaa;
-  border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
-  border-bottom-left-radius: 20rpx;
-  border-bottom-right-radius: 20rpx;
+.swiper-view {
+  /* margin-top: 20rpx; */
+  margin-left: 0%;
+  width: 100%;
+  background-color: #fff;
+}
+
+.swiper-game {
+  margin-top: 20rpx;
+  margin-left: 2%;
+  margin-bottom: 1rem;
+  width: 96%;
+  background-color: #f7f7f7;
+  /* border-radius: 20rpx; */
+  box-shadow: 0 0 16rpx #fff;
   display: inline-block;
 }
-.image{
+
+.swiper-game image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+  display: block;
+  /* margin: 0 auto; */
+}
+
+/*顶部导航*/
+
+.swiper-tab {
+  text-align: center;
+  background-color: #fff;
+  line-height: 35px;
+}
+
+.tab-list-left {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  border: 1px solid #488aff;
+  line-height: 60rpx;
+  color: #488aff;
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.tab-list-middle {
+  line-height: 60rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  border: 1px solid #488aff;
+  color: #488aff;
+}
+
+.tab-list-right {
+  line-height: 60rpx;
+  font-size: 30rpx;
+  display: inline-block;
+  width: 25%;
+  border: 1px solid #488aff;
+  color: #488aff;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.on {
+  color: #fff;
+  background-color: #488aff;
+}
+
+.title {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  color: #bbb;
+}
+
+/* 加载更多按钮 */
+.button {
+  display: flex;
+  align-content: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 35%;
+  height: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  color: #fff;
+  background-color: #488aff;
+  /* position: fixed; */
+  box-shadow: 0 0 16rpx rgba(0, 0, 0, 0.25);
+  border-radius: 10rpx;
+}
+
+.subTitle {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+
+.subTitle2 {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+}
+
+.tab-title {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.swiper image {
   width: 100%;
   height: 100%;
   color: #bbb;
+  border-radius: 20rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.swiper-container-wrapper {
+  /* 设置图片可视区的外层<div>的样式 *//* width: 906px; */
+  height: 570px;
+  margin: 50px auto;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.tab {
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.topTabSwiper {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid #f00;
+  color: #f00;
+}
+
+.swiper {
+  width: 100%;
+  background-color: #fff;
+}
+
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 80rpx 0;
+}
+
+.items {
+  width: 100%;
+  background-color: #f00;
+  padding: 0;
+}
+
+.item {
+  width: 25%;
+  float: left;
+  margin: 20rpx 0 10rpx 0;
+}
+
+.item text {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.item image {
+  width: 160rpx;
+  height: 186rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.huace {
+  width: 750rpx;
+  height: 118rpx;
+  margin: 0 auto;
 }
