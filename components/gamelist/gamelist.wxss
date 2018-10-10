@@ -1,0 +1,130 @@
+/* components/gamelist/gamelist.wxss */
+.page-header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1rpx solid #ccc;
+}
+.page-title {
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 38rpx;
+  text-align: left;
+}
+.page-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #ddd;
+  cursor: pointer;
+}
+.item .poster {
+  width: 128rpx;
+  height: 128rpx;
+  /* left: 0rpx; */
+}
+.item .meta {
+  flex: 1;
+}
+.item .meta .title,.item .meta .sub-title {
+  display: block;
+  text-align: left;
+  margin-bottom: 15rpx;
+}
+.item .meta .title {
+  font-size: 32rpx;
+  color: #333;
+}
+.item .meta .sub-title {
+  font-size: 22rpx;
+  color: #666;
+}
+.item .meta .user-count {
+  text-align: left;
+  font-size: 26rpx;
+  color: #999;
+}
+.item .button {
+  margin-right: 20rpx;
+  margin-top: 32rpx;
+  width: 128rpx;
+  height: 64rpx;
+  font-size: 26rpx;
+  color: #fff;
+  background-color: #488aff;
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+  line-height: 50rpx;
+  box-shadow: 0 0 16rpx rgba(0, 0, 0, 0.65);
+}
+
+.item .highlighted{
+  color: #488aff;
+  background-color: #fff;
+}
+
+.tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+.tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.tips image,.tips text {
+  vertical-align: middle;
+}
+
+
+/* collection */
+.collection .items {
+  width: 100%;
+  background-color: #f00;
+  padding: 0;
+}
+
+.collection .item {
+  width: 25%;
+  float: left;
+  margin: 20rpx 0 10rpx 0;
+}
+
+.collection .subTitle {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #333;
+}
+
+.collection .subTitle2 {
+  text-align: left;
+  margin-left: 20rpx;
+  font-size: 20rpx;
+  line-height: 20rpx;
+  color: #666;
+}
+
+.item text {
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.item image {
+  width: 160rpx;
+  height: 186rpx;
+  display: block;
+  margin: 0 auto;
+}

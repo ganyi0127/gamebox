@@ -6,18 +6,22 @@ Page({
    */
   data: {
     url: '',
+    title: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var url = options.url
+    var title = options.title
 
-    console.log('web options: ' + options.url)
+    console.log('web options: ' + url + ' ' + title)
 
-    var decodeUrl = decodeURIComponent(options.url)
+    var decodeUrl = decodeURIComponent(url)
     this.setData({
       url: decodeUrl,
+      title: title,
     });
   },
 
@@ -26,13 +30,19 @@ Page({
    */
   onReady: function () {
 
+    // 修改nav title
+    wx.setNavigationBarTitle({
+      title: this.data.title,
+    })
+
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**

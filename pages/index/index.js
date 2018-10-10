@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '进入游戏主页',
+    motto: '进入盒子',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -26,9 +26,7 @@ Page({
 
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    
   },
   
   /**

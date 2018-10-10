@@ -1,0 +1,36 @@
+<!--components/gamelist/gamelist.wxml-->
+
+<!--类型判断,显示不同的数据-->
+<block wx:if="{{isList}}">
+  <!--列表-->
+  <view class='page-body' wx:for="{{list}}" wx:for-index="index" wx:for-item="game">
+    <navigator hover-class="none" url='..' hover-stop-propagation='true'>
+      <view class='item'>
+        <image class='poster' src='{{game.icon}}'></image>
+        <view class='meta'>
+          <text class='title'>{{game.name}}</text>
+          <text class='sub-title'>{{game.detail}}</text>
+          <text class='user-count'>在线人数：{{game.user_count}}</text>
+        </view>
+        <button class='button' hover-class='highlighted' bindtap='bindGameTap' data-game='{{game}}'>进入</button>
+      </view>
+    </navigator>
+  </view>
+</block>
+
+<!--另一种情况-->
+<block wx:else>
+  <scroll-view scroll-x="false" scroll-y wx:if='false'>
+    <!-- 游戏布局 -->
+    <view class='collection'>
+      <view class="items">
+        <view class="item" wx:for="{{list}}" wx:for-index="index" wx:for-item="game">
+          <image class="item-cover" src="{{game.icon}}" background-size="contain" bindtap="bindGameTap" data-game='{{game}}'></image>
+          <view class='subTitle'>{{game.name}}</view>
+          <view class='subTitle2'>{{game.detail}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+</block>

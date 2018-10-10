@@ -32,6 +32,7 @@
   text-align: center;
   background-color: #fff;
   line-height: 35px;
+  margin-top: 16rpx;
 }
 
 .tab-list-left {
@@ -98,21 +99,6 @@
   border-radius: 10rpx;
 }
 
-.subTitle {
-  text-align: left;
-  margin-left: 20rpx;
-  font-size: 28rpx;
-  line-height: 40rpx;
-  color: #333;
-}
-
-.subTitle2 {
-  text-align: left;
-  margin-left: 20rpx;
-  font-size: 20rpx;
-  line-height: 20rpx;
-  color: #666;
-}
 
 .tab-title {
   margin-left: 20rpx;
@@ -173,31 +159,6 @@
   padding: 80rpx 0;
 }
 
-.items {
-  width: 100%;
-  background-color: #f00;
-  padding: 0;
-}
-
-.item {
-  width: 25%;
-  float: left;
-  margin: 20rpx 0 10rpx 0;
-}
-
-.item text {
-  width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 28rpx;
-}
-
-.item image {
-  width: 160rpx;
-  height: 186rpx;
-  display: block;
-  margin: 0 auto;
-}
 
 .huace {
   width: 750rpx;

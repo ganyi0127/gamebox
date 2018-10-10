@@ -20,7 +20,7 @@ Component({
     // 弹窗取消按钮文字
     cancelText: {
       type: String,
-      value: '取消'
+      value: null, //'取消'
     },
     // 弹窗确认按钮文字
     confirmText: {
