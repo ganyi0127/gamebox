@@ -2,22 +2,24 @@
   "pages": [
     
     "pages/box/box",
+    "pages/me/me",
     "pages/logs/logs",
     "pages/web/web",
-    "pages/me/me",
-    "pages/index/index"
-    
+    "pages/index/index",
+    "pages/me/message/message",
+    "pages/me/service/service"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#488aff",
     "navigationBarTitleText": "游戏盒子登录",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "backgroundColor": "#fff",
     "borderStyle": "black",
-    "selectedColor": "#488aff",
+    "color": "#6f6f6f",
+    "selectedColor": "#fbb03b",
     "position": "bottom",
     "list": [
       {
@@ -29,8 +31,8 @@
       {
         "pagePath": "pages/me/me",
         "text": "个人",
-        "iconPath": "images/tabs/tab_1_normal.png",
-        "selectedIconPath": "images/tabs/tab_1_selected.png"
+        "iconPath": "images/tabs/tab_3_normal.png",
+        "selectedIconPath": "images/tabs/tab_3_selected.png"
       }
     ]
   }

@@ -1,0 +1,11 @@
+<!--pages/message/message.wxml-->
+<block wx:if="{{messageList.length>0}}">
+  <view class="card" style='{{message.is_read==0 ? "background-color: #fff;" : "background-color: #eee;"}}' wx:for="{{messageList}}" wx:for-index="index" wx:for-item="message">
+    <text class="card-title">{{message.title}}</text>
+    <text class="card-date">{{message.time}}</text>
+    <!-- <image class='card-img' src='https://image4.suning.cn/uimg/cms/img/153818701965058151.jpg?from=mobile'></image> -->
+    <text class="card-desc">{{message.content}}</text>
+    <!-- <text class="card-read arrow">查看详情</text> -->
+    <!-- <view class="card-dot" wx:if="{{message.is_read==0}}"></view> -->
+  </view>
+</block>

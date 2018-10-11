@@ -1,6 +1,6 @@
 <!--pages/me/me.wxml-->
 
-<view>
+<view style='background-color:#488aff;'>
   <view class="userinfo">
     <button class='userinfo-login' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
       微信登录
@@ -10,6 +10,22 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <button class='userinfo-sign' bindtap="sign"> 签到 </button>
     </block>
+  </view>
+
+  <!-- 列表 -->
+  <view class='list-body'>
+    <view class='list-cell' wx:for="{{list}}" wx:for-index="index" wx:for-item="cell">
+      <navigator url='{{cell.url}}'>
+        <view class='item'>
+          <image mode='aspectFill' class='poster' src='{{cell.icon}}'></image>
+          <text class='title'>{{cell.name}}</text>
+          <view class='dot'>
+            <view wx:if='{{cell.hasNew}}'></view>
+          </view>
+          <image mode='widthFix' class='arrow' src='/images/icons/arrow.png'></image>
+        </view>
+      </navigator>
+    </view>
   </view>
 
   <!-- 合作按钮 -->

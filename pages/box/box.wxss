@@ -1,5 +1,7 @@
 /* pages/box/box.wxss */
-
+page{
+  background-color: white;
+}
 .swiper-view {
   /* margin-top: 20rpx; */
   margin-left: 0%;
@@ -32,7 +34,7 @@
   text-align: center;
   background-color: #fff;
   line-height: 35px;
-  margin-top: 16rpx;
+  margin-top: 32rpx;
 }
 
 .tab-list-left {

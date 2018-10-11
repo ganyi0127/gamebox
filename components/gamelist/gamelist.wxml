@@ -3,9 +3,9 @@
 <!--类型判断,显示不同的数据-->
 <block wx:if="{{isList}}">
   <!--列表-->
-  <view class='page-body' wx:for="{{list}}" wx:for-index="index" wx:for-item="game">
+  <view scroll-y='true' class='page-body'  wx:for="{{list}}" wx:for-index="index" wx:for-item="game">
     <navigator hover-class="none" url='..' hover-stop-propagation='true'>
-      <view class='item'>
+      <view id='item' class='item'>
         <image class='poster' src='{{game.icon}}'></image>
         <view class='meta'>
           <text class='title'>{{game.name}}</text>
@@ -20,7 +20,7 @@
 
 <!--另一种情况-->
 <block wx:else>
-  <scroll-view scroll-x="false" scroll-y wx:if='false'>
+  <scroll-view scroll-x="false" scroll-y="true" wx:if='false'>
     <!-- 游戏布局 -->
     <view class='collection'>
       <view class="items">

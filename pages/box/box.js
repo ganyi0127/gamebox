@@ -15,7 +15,7 @@ Page({
     historys: [],
     autoPlay: false, //顶部是否自动播放
     swiperHeight: 0, //顶部swiper高度
-    itemsHeight: 750, //中部游戏列表总高度
+    itemsHeight: 1, //中部游戏列表总高度
     swiperImageHeight: 1, //顶部swiper图片高度（给个初始非0，否则不显示）
     indicatorDots: true, //是否显示顶部偏移点
     currentTab: 0, //顶部swiper选择项
@@ -35,7 +35,7 @@ Page({
 
     this.history = this.selectComponent('#history')
     this.alert = this.selectComponent("#alert");
-
+    this.gamelistComponent = this.selectComponent("#gamelist")
 
 
     var that = this;
@@ -131,6 +131,9 @@ Page({
           }
         }
 
+        // 动态设置高度
+        this.setListHeight(this.data.currentNavTab)
+
         this.setData({
           gamesData: tempGames,
           page: page,
@@ -160,7 +163,7 @@ Page({
           wx.hideToast()
           wx.hideLoading()
 
-        }, 3000);
+        });
 
         if (complete) {
           complete()
@@ -168,9 +171,9 @@ Page({
       }
     })
 
-    // wx.showLoading({
-    //   title: '获取中',
-    // })
+    wx.showLoading({
+      title: '正在加载游戏...',
+    })
     wx.showNavigationBarLoading()
   },
 
@@ -283,9 +286,9 @@ Page({
       return
     }
     var length = (this.data.gamesData[segmentIndex].values).length
-
-    var height = Math.ceil(length / 1) * 200 + 200
-    if (height < 750) {
+    
+    var height = length * (128 + 64) + 0
+    if (height < 1) {
       height = 750
     }
 
@@ -366,7 +369,10 @@ Page({
    */
   getMoreGames: function(e) {
 
-    this.getGames();
+    if (this.data.currentNavTab != 0) {
+      this.getGames();
+    }
+
   },
 
   /**

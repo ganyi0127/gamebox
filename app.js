@@ -69,15 +69,18 @@ App({
     })
   },
 
+  /**
+   * 全局变量
+   */
   globalData: {
     userInfo: null,     //用户信息
     actions: {          //请求actions
       login: '/login',
-      getBannerList: '/hall/getBannerList',
-      getGameList: '/hall/getgames',
-      getSlides: '/hall/getProducts',
-      getSignData: '/user/signInfo',
-      sign: '/user/sign',
+      getBannerList: '/hall/getBannerList', //获取banner图
+      getGameList: '/hall/getgames',  //获取游戏列表
+      getSignData: '/user/signInfo',  //获取签到信息
+      sign: '/user/sign', // 签到
+      getMessages: '/user/notice',  // 获取消息
     },
   },
   onShow: function(){

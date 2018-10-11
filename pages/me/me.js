@@ -11,10 +11,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 用户信息
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    clicked: false
+    clicked: false,
+
+    // 列表
+    list: [{
+      name: '消息中心',
+      icon: '/images/icons/message.png',
+      url: '/pages/me/message/message',
+      hasNew: false,
+    }, {
+      name: '客服系统',
+      icon: '/images/icons/service.png',
+      url: '/pages/me/service/service',
+      hasNew: false,
+    }],
+
+    // 消息
+    messagePage: 1,
+    messagePageSize: 20,
+    messageList: [],
   },
 
   /**
@@ -22,6 +41,13 @@ Page({
    */
   onLoad: function(options) {
 
+    this.getUserData();
+  },
+
+  /**
+   * 获取用户信息
+   */
+  getUserData() {
     if (app.globalData.userInfo) {
       console.log('使用globalData');
       console.log(app.globalData.userInfo);
@@ -61,6 +87,43 @@ Page({
   },
 
   /**
+   * 获取消息数据
+   */
+  getMessages() {
+    network.POST({
+      action: app.globalData.actions.getMessages,
+      params: {
+        page: this.data.messagePage,
+        pageSize: this.data.messagePageSize,
+      },
+      success: (res) => {
+        console.log(res)
+
+        // 判断是否有新消息
+        var hasNew = false 
+        for (var i = 0; i < res.length; i++) {
+          var message = res[i]
+          var is_read = message.is_read
+          if (is_read===0){
+            hasNew = true 
+            break
+          }
+        }
+
+        // 动态修改值
+        var hasNewStr = "list[0].hasNew"
+        var urlStr = "list[0].url"
+        let resStr = JSON.stringify(res);
+        this.setData({
+          messageList: res,
+          [hasNewStr]:hasNew,
+          [urlStr]: "/pages/me/message/message?messageListJSON=" + resStr,
+        })
+      }
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
@@ -71,7 +134,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.getMessages();
   },
 
   /**
@@ -112,7 +175,7 @@ Page({
   /**
    * 获取个人信息
    */
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -142,7 +205,7 @@ Page({
           duration: 2000,
         })
       },
-      complete: function () {
+      complete: function() {
         // complete  
         wx.hideNavigationBarLoading()
       }
@@ -150,8 +213,8 @@ Page({
   },
 
   /**
-  * 显示弹窗
-  */
+   * 显示弹窗
+   */
   showAlert() {
     // this.alert.showAlert();
     wx.showModal({
@@ -160,13 +223,13 @@ Page({
       showCancel: false,
       confirmText: '确认',
       confirmColor: '#488aff',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           console.log('用户点击确定')
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
       }
-    })  
+    })
   },
 })

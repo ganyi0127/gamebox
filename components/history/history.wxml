@@ -1,6 +1,6 @@
 <!--components/history/history.wxml-->
 <view class='history' hidden="{{!historys.length>0}}">
-  <text>最近玩过</text>
+  <text>最近玩的</text>
   <scroll-view class='root'>
 
     <view class="items">

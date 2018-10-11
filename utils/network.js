@@ -42,6 +42,8 @@ function request(method, requestHandler) {
     success: function(res) {
       //注意：可以对参数解密等处理  
       var data = res.data
+      console.log('返回数据：' + requestHandler.action)
+      console.log(data)
       if (data.code == 200) {
         requestHandler.success(data.data)
       } else {
