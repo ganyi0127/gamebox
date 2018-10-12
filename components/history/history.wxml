@@ -1,9 +1,9 @@
 <!--components/history/history.wxml-->
 <view class='history' hidden="{{!historys.length>0}}">
   <text>最近玩的</text>
-  <scroll-view class='root'>
+  <view class='root'>
 
-    <view class="items">
+    <view class="items" scroll-x='true' >
       <view class="item" wx:for="{{historys}}" wx:for-index="index" wx:for-item="game">
         <image class="item-cover" src="{{game.icon}}" bindtap="bindGameTap" data-game='{{game}}'></image>
         <view class='subTitle'>{{game.name}}</view>
@@ -11,5 +11,5 @@
       </view>
     </view>
 
-  </scroll-view>
+  </view>
 </view>

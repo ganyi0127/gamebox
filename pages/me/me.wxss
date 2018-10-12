@@ -1,4 +1,7 @@
 /* pages/me/me.wxss */
+page{
+  background-color: white;
+}
 .userinfo {
   display: flex;
   flex-direction: row;
@@ -46,7 +49,7 @@
 .item {
   display: flex;
   padding: 20rpx 20rpx;
-  border-top: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
   cursor: pointer;
   /* justify-content: center; */
   /* justify-items: center; */

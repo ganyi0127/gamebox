@@ -34,15 +34,16 @@ Page({
     wx.setNavigationBarTitle({
       title: this.data.title,
     })
-
-    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    // 修改nav title
+    wx.setNavigationBarTitle({
+      title: this.data.title,
+    })
   },
 
   /**
